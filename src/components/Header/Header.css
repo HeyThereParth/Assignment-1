@@ -1,11 +1,10 @@
 .header {
   padding: 1rem;
   width: 100%;
-  
 }
 
 .header__search-section {
-  display:flex;
+  display: flex;
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
@@ -22,15 +21,13 @@
 .header__icon {
   font-size: 1.8rem;
   color: #666;
-
 }
-#location{
-    transition: 0.2 ease;
-    padding: 0.1rem;
-
+#location {
+  transition: 0.2 ease;
+  padding: 0.1rem;
 }
-#location:hover{
-    color: #251757;
+#location:hover {
+  color: #251757;
 }
 .header__input {
   border: none;
@@ -61,7 +58,7 @@
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  padding: 0 1rem;            
+  padding: 0 1rem;
   border-radius: 6px;
   transition: all 0.3s ease;
 
@@ -69,10 +66,9 @@
   align-items: center;
   justify-content: center;
 
-  height: 50px;        
-  min-width: 100px;          
+  height: 50px;
+  min-width: 100px;
 }
-
 
 .navigation__link:hover {
   background-color: #bbdefb;
@@ -82,34 +78,24 @@
 .navigation__link.active {
   background-color: #0d47a1;
   color: #fff;
-  /* margin-left: 12px; */
-  /* display: inline; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* align-self: center; */
 }
 .header__toggle-unit {
-  /* padding: 0.5rem 0.8rem; */
-  
   border: none;
-  /* background-color: #1e90ff; */
   color: rgb(214, 118, 111);
   font-weight: 500;
   border-radius: 20px;
   cursor: pointer;
   font-size: 1.5rem;
-  
 }
 
 .header__toggle-unit:hover {
   color: red;
   transition: background-color 0.3s ease;
 }
-.header__button-1{
- background-color: white;
+.header__button-1 {
+  background-color: white;
   border: none;
   border-radius: 8px;
   padding: 0.5rem;
   cursor: pointer;
 }
-

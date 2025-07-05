@@ -2,12 +2,12 @@
   padding: 1rem;
   overflow-x: auto;
   scroll-behavior: smooth;
-  -ms-overflow-style: none;  /* IE & Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .hourly-forecast::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari & Opera */
+  display: none;
 }
 
 .weather-list {
@@ -26,7 +26,7 @@
   text-align: center;
   min-width: 80px;
   flex-shrink: 0;
-  aspect-ratio: 1; /* Keeps it square */
+  aspect-ratio: 1;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 

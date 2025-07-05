@@ -2,12 +2,12 @@
   padding: 1rem;
   padding-right: 1rem;
   overflow-x: auto;
-  -ms-overflow-style: none;  /* IE & Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;    
 }
 
 .daily-forecast::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari & Opera */
+  display: none;            
 }
 
 .daily-list {
@@ -22,7 +22,6 @@
 .daily-forecast__item {
   background-color: #ffffff;
   padding: 0.5rem;
-  /* padding-right: 1rem; */
   border-radius: 12px;
   text-align: center;
   min-width: 120px;
