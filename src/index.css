@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+/* @import "tailwindcss";
+@plugin "daisyui"; */
+/* @import "tailwindcss"; */
+*{
+  box-sizing: border-box;
+   font-family: "Montserrat", sans-serif;
+   /* outline: 1px solid rgba(255, 0, 0, 0.2); */
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(#a894c4, #64258b);
+  overflow-x: auto;
+}
+.container{
+  max-width: 410px;
+  /* overflow-x: hidden; */
+  overflow: hidden;
+  border-radius: 15px;
+  background: linear-gradient(#48178c, #0b0012);
+ 
+}

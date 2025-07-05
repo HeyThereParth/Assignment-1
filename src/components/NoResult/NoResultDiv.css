@@ -1,0 +1,11 @@
+.no-result{
+    color: #fff;
+    display: flex;
+    /* min-width: 460px; */
+    flex-direction: column;
+    align-items: center;
+
+}
+.no-result__icon{
+    height: 9rem;
+}

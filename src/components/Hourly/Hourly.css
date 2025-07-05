@@ -1,0 +1,49 @@
+.hourly-forecast {
+  padding: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hourly-forecast::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari & Opera */
+}
+
+.weather-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: nowrap;
+}
+
+.hourly-forecast__item {
+  background-color: white;
+  padding: 0.75rem;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 80px;
+  flex-shrink: 0;
+  aspect-ratio: 1; /* Keeps it square */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hourly-forecast__item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.hourly-forecast__temperature {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.hourly-forecast__time {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.25rem;
+}

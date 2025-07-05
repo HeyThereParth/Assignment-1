@@ -1,0 +1,41 @@
+.weather-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  
+}
+
+.weather-section__current {
+  text-align: center;
+  /* background-color: white; */
+  /* padding: 1rem 2rem; */
+  /* border-radius: 12px; */
+  /* box-shadow: 0 4px 10px rgba(0,0,0,0.1); */
+}
+
+.weather-section__icon {
+  /* width: 60px; */
+  height: 9rem;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.weather-section__temperature {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  color: white;
+  margin-top: -2rem;
+}
+
+.weather-section__temperature span {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.weather-section__description {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
