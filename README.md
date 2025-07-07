@@ -41,7 +41,7 @@ A  weather forecasting app built using **React**, **Redux Toolkit**, and **Axios
 │   ├── 📁 Hourly
 │   └── 📁 NoResult
 ├── 📁 features
-│   └── 📁 weather            # Redux slice + async thunk
+│   └── 📁 weather            # Redux slice
 │       └── weatherslice.js
 ├── 📁 pages
 │   ├── DailyPage.jsx
