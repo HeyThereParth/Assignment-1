@@ -1,12 +1,51 @@
-# React + Vite
+# 🌦️ Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A  weather forecasting app built using **React**, **Redux Toolkit**, and **Axios**. This app allows users to search for a city, view the current weather, 24-hour and 5-day forecasts, and even fetch weather using geolocation.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔄 State management with **Redux Toolkit**
+- 🌐 API integration using **Axios** + **WeatherAPI**
+- 🔍 Debounced input search using 
+- 📍 Geolocation support for instant weather lookup
+- 🌡️ Toggle between **Celsius & Fahrenheit**
+- ⚠️ Error handling with fallback UI
+- 🧹 Clean folder structure and component separation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧱 Tech Stack
+
+- **React** + **Vite**
+- **Redux Toolkit**
+- **Axios**
+- **React Router**
+- **WeatherAPI**
+- **CSS (BEM naming)**
+
+---
+
+## 📂 Folder Structure
+
+```plaintext
+📦 src
+├── 📁 app
+│   └── store.js              # Redux store configuration
+├── 📁 assets                 # Icons / images
+├── 📁 components
+│   ├── 📁 Header
+│   ├── 📁 Weather
+│   ├── 📁 Daily
+│   ├── 📁 Hourly
+│   └── 📁 NoResult
+├── 📁 features
+│   └── 📁 weather            # Redux slice + async thunk
+│       └── weatherslice.js
+├── 📁 pages
+│   ├── DailyPage.jsx
+│   ├── HourlyPage.jsx
+├── App.jsx
+├── main.jsx
+└── index.css
