@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import { expect, test } from "vitest";
 import Weather from "./Weather";
@@ -15,7 +14,6 @@ test("renders the weather description", () => {
 });
 
 test("renders the temperature", () => {
-  render(<Weather currentWeather={sampleCurrentWeather} isCelsius={true}/>);
+  render(<Weather currentWeather={sampleCurrentWeather} isCelsius={true} />);
   expect(screen.getByText("28")).toBeInTheDocument();
 });
-

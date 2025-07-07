@@ -1,9 +1,14 @@
 import "./Weather.css";
+import { useSelector } from "react-redux";
 
-function Weather({ currentWeather, isCelsius }) {
+function Weather() {
+  const { current, isCelsius } = useSelector((state) => state.weather);
+
+  if (!current.temperature) return null; // Prevents rendering on initial load
+
   const temperature = isCelsius
-    ? Math.floor(currentWeather.temperature)
-    : Math.floor((currentWeather.temperature * 9) / 5 + 32);
+    ? Math.floor(current.temperature)
+    : Math.floor((current.temperature * 9) / 5 + 32);
 
   const unit = isCelsius ? "C" : "F";
 
@@ -11,7 +16,7 @@ function Weather({ currentWeather, isCelsius }) {
     <div className="weather-section">
       <div className="weather-section__current">
         <img
-          src={`https:${currentWeather.icon}`}
+          src={`https:${current.icon}`}
           alt="weather icon"
           className="weather-section__icon"
         />
@@ -19,13 +24,10 @@ function Weather({ currentWeather, isCelsius }) {
           {temperature}
           <span>°{unit}</span>
         </h2>
-        <p className="weather-section__description">
-          {currentWeather.description}
-        </p>
+        <p className="weather-section__description">{current.description}</p>
       </div>
     </div>
   );
 }
 
 export default Weather;
-

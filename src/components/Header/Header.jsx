@@ -1,32 +1,35 @@
 import "./Header.css";
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchWeather, toggleUnit, setSearchTerm, } from "../../features/weather/weatherslice";
+import { useEffect } from "react";
 
-function Header({
-  getWeatherDetail,
-  searchInputRef,
-  toggleTemperatureUnit,
-  isCelsius,
-}) {
-  const API_KEY = import.meta.env.VITE_API_KEY;
+function Header() {
+  const dispatch = useDispatch();
+  const isCelsius = useSelector((state) => state.weather.isCelsius);
+  const searchTerm = useSelector((state) => state.weather.searchTerm);
 
-  const handleCitySearch = (e) => {
-    e.preventDefault();
-    const searchInput = e.target.querySelector(".header__input");
-    const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${searchInput.value}&days=5`;
-    getWeatherDetail(API_URL);
-  };
+
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (searchTerm.trim()) {
+        dispatch(fetchWeather(searchTerm.trim()));
+      }
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, [searchTerm, dispatch]);
+
+  
   const handleLocationSearch = () => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
-        console.log(position);
-        const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${latitude},${longitude}&days=5`;
-        getWeatherDetail(API_URL);
+        dispatch(fetchWeather(`${latitude},${longitude}`));
       },
       () => {
-        alert(
-          "Location access denied. Please enable permissions to use this feature."
-        );
+        alert("Location access denied. Please enable permissions.");
       }
     );
   };
@@ -34,46 +37,30 @@ function Header({
   return (
     <div className="header">
       <div className="header__search-section">
-        <form action="#" className="header__form" onSubmit={handleCitySearch}>
+        <form onSubmit={(e) => e.preventDefault()} className="header__form">
           <span className="header__icon material-symbols-rounded">search</span>
           <input
             type="text"
             placeholder="Enter a city name"
-            ref={searchInputRef}
+            value={searchTerm}
+            onChange={(e) => dispatch(setSearchTerm(e.target.value))}
             className="header__input"
-            required
           />
         </form>
-        <button className="header__button-1" id="temerature-toggle">
-          <span
-            className="header__toggle-unit"
-            // id="location"
-            onClick={toggleTemperatureUnit}
-          >
-            {isCelsius ? "°F" : "°C"}
-          </span>
+
+        <button className="header__button-1" onClick={() => dispatch(toggleUnit())}>
+          <span className="header__toggle-unit">{isCelsius ? "°F" : "°C"}</span>
         </button>
-        <button className="header__button">
-          <span
-            className="header__icon material-symbols-rounded"
-            id="location"
-            onClick={handleLocationSearch}
-          >
-            distance
-          </span>
+
+        <button className="header__button" onClick={handleLocationSearch}>
+          <span className="header__icon material-symbols-rounded" id="location">distance</span>
         </button>
       </div>
 
       <nav className="navigation">
-        <NavLink to="/" className="navigation__link">
-          Home
-        </NavLink>
-        <NavLink to="/hourly" className="navigation__link">
-          24-Hour Forecast
-        </NavLink>
-        <NavLink to="/days" className="navigation__link">
-          5-Day Forecast
-        </NavLink>
+        <NavLink to="/" className="navigation__link">Home</NavLink>
+        <NavLink to="/hourly" className="navigation__link">24-Hour Forecast</NavLink>
+        <NavLink to="/days" className="navigation__link">5-Day Forecast</NavLink>
       </nav>
     </div>
   );
